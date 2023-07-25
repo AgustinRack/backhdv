@@ -62,3 +62,5 @@ Properties.init(
   },
   { sequelize: db, modelName: "properties" }
 );
+
+module.exports = Properties;

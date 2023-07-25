@@ -1,4 +1,4 @@
-const { Properties, Favorites, Users, Categories } = require("../models");
+const { Properties, Favorites, Categories } = require("../models");
 
 const createFavorite = async (req, res) => {
   try {
