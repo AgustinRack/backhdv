@@ -30,6 +30,7 @@ User.init(
 
 User.beforeCreate((user) => {
   const salt = bcrypt.genSaltSync(10);
+  console.log(salt);
   user.salt = salt;
 
   return user.hash(user.password, user.salt).then((hash) => {
@@ -37,11 +38,11 @@ User.beforeCreate((user) => {
   });
 });
 
-Users.prototype.hash = function (plainPassword, salt) {
+User.prototype.hash = function (plainPassword, salt) {
   return bcrypt.hash(plainPassword, salt);
 };
 
-Users.prototype.validatePassword = function (password) {
+User.prototype.validatePassword = function (password) {
   return bcrypt.compare(password, this.password);
 };
 
