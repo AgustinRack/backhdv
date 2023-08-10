@@ -1,8 +1,8 @@
-const { DataTypes } = require("sequelize");
-const sequelize = require("../db");
+const Sequelize = require("sequelize");
+const db = require("../config/db");
 const bcrypt = require("bcrypt");
 
-class User extends sequelize.Model {}
+class User extends Sequelize.Model {}
 
 User.init(
   {
@@ -28,21 +28,13 @@ User.init(
   { sequelize: db, modelName: "user" }
 );
 
-User.beforeCreate((user) => {
+/* User.beforeCreate((user) => {
   const salt = bcrypt.genSaltSync(10);
   user.salt = salt;
 
   return user.hash(user.password, user.salt).then((hash) => {
     user.password = hash;
   });
-});
-
-Users.prototype.hash = function (plainPassword, salt) {
-  return bcrypt.hash(plainPassword, salt);
-};
-
-Users.prototype.validatePassword = function (password) {
-  return bcrypt.compare(password, this.password);
-};
+}); */
 
 module.exports = User;
