@@ -1,9 +1,11 @@
-const { Router } = require("express");
+const express = require("express");
+const router = express.Router();
+const user = require("./user");
 
-const router = Router();
+router.use("/user", user);
 
-router.get("/", (req, res) => {
+/* router.get("/", (req, res) => {
   res.send("Hola Messi");
-});
+}); */
 
 module.exports = router;

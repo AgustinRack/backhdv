@@ -1,5 +1,5 @@
-const { Sequelize, DataTypes } = require("sequelize");
-const db = require("../db");
+const Sequelize = require("sequelize");
+const db = require("../config/db");
 
 class Visits extends Sequelize.Model {}
 
