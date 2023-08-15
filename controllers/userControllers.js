@@ -1,5 +1,6 @@
 const User = require("../models/User");
 require("dotenv").config();
+const { generateToken } = require("../config/token");
 
 exports.signup = async (req, res) => {
   try {
@@ -56,18 +57,18 @@ exports.login = async (req, res) => {
   }
 };
 
-const secret = (req, res) => {
+/* exports.secret = (req, res) => {
   const { payload } = validateToken(req.cookies.token);
   req.user = payload;
   res.send(payload);
 };
 
-const logout = (req, res) => {
+exports.logout = (req, res) => {
   res.clearCookie("token");
   res.sendStatus(200);
 };
 
-const editUser = async (req, res) => {
+exports.editUser = async (req, res) => {
   const { id, name, lastName, email, phoneNumber } = req.body;
 
   try {
@@ -129,4 +130,4 @@ const allUsers = async (req, res) => {
   } catch (error) {
     res.status(500).send("Error al enviar todos los usuarios");
   }
-};
+}; */
