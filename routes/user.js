@@ -10,8 +10,8 @@ const {
 
 router.post("/signup", signup);
 router.post("/login", login);
-router.post("/logout", validateUser, logout);
-router.get("/secret", validateUser, secret);
-router.put("/edit", validateUser, editUser);
+/* router.post("/logout", logout);
+router.get("/secret", secret);
+router.put("/edit", editUser); */
 
 module.exports = router;

@@ -1,6 +1,3 @@
-//cada vez que quieras sembrar los productos del seeder, abri una nueva terminal y pone el comando
-// node seeder/seed.js
-
 const { Properties, Categories } = require("../models");
 const sequelize = require("sequelize");
 
@@ -568,3 +565,5 @@ async function seedProperties() {
 }
 
 seedProperties();
+
+// node seeder/seed.js
